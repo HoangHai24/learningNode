@@ -8,6 +8,10 @@ const app = express(); // app express
 const port = process.env.PORT || 3001;
 const hostname = process.env.HOST_NAME || require("dotenv").config();
 
+//config req.body
+app.use(express.json()); // for json
+app.use(express.urlencoded({ extended: true })); // for form data
+
 // config template engine
 configViewEngine(app);
 
